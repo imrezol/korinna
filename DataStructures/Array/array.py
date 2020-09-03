@@ -19,13 +19,8 @@ print("There were {} competitors".format(len(places)))
 print()
 
 print("all places:")
-for x in range(5):
+for x in range(len(places)):
   print(x+1,'.',places[x])
-print()
-
-print("all competitors")
-for competitor in places:
-    print(competitor)
 print()
 
 print_podium(places)
@@ -36,9 +31,5 @@ places[3] = "Noah"
 
 print_podium(places)
 
-if "Emma" in places:
-    print("Emma was a competitor")
-else:
-    print("Emma wasn't a competitor")
 
 
