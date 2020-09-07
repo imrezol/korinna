@@ -6,6 +6,7 @@
 
 ## Python
 * Style Guide for Python Code: https://www.python.org/dev/peps/pep-0008/
+* https://softwareengineering.stackexchange.com/questions/308972/python-file-naming-convention
 * w3school Tutorial: https://www.w3schools.com/python/
 
 
