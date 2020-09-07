@@ -2,27 +2,27 @@
 
 age = 30
 
-def myfunc():
+def my_func():
     age = 20
-    print("age inside myfunc", age)
+    print("age inside my_func", age)
 
-def myfunc2():
+def my_func2():
     age = 20
-    print("age inside myfunc", age)
+    print("age inside my_func2", age)
     if 1==1 :
         age = 10
         print("age inside if", age)
-    print("age inside myfunc after if", age)
+    print("age inside my_func2 after if", age)
 
-def myfunc3():
+def my_func3():
     price = 200
-    print("price inside myfunc3", price)
+    print("price inside my_func3", price)
 
 
-myfunc()
+my_func()
 
-print("age outside myfunc", age)
+print("age outside my_func", age)
 
-myfunc2()
+my_func2()
 
-# print("price outside myfunc2", price) # NameError: name 'price' is not defined
+# print("price outside my_func2", price) # NameError: name 'price' is not defined

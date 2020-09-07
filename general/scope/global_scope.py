@@ -2,21 +2,21 @@
 
 fruit = "apple"
 
-def myfunc():
+def my_func():
     global fruit
     fruit = "orange"
-    print("fruit inside myfunc", fruit)
+    print("fruit inside my_func", fruit)
 
-def myfunc2():
+def my_func2():
     global name
     name = "Korinna"
-    print("name inside myfunc2", name)
+    print("name inside my_func2", name)
 
 
 
-print("fruit before myfunc", fruit)
-myfunc()
-print("fruit after myfunc", fruit)
+print("fruit before my_func", fruit)
+my_func()
+print("fruit after my_func", fruit)
 
-myfunc2()
-print("name outside myfunc2", name) # without calling myfunc2: NameError: name 'name' is not defined
+my_func2()
+print("name outside my_func2", name) # without calling my_func2: NameError: name 'name' is not defined
