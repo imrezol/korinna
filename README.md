@@ -32,6 +32,10 @@
 ### Libraries:
 * https://www.nltk.org/
 
+##PyCharm
+* Python interpreter: PyCharm -> Preferences -> Project:korinna -> python interpreter
+* Third party dependencys: https://www.jetbrains.com/help/pycharm/managing-dependencies.html#apply_dependencies
+ 
 
 ## Notes
 * https://www.freecodecamp.org/news/python-while-loop-tutorial-do-while-true-example-statement/
