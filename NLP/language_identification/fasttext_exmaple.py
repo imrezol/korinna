@@ -6,10 +6,12 @@ import fasttext
 import bs4
 import urllib.request
 
-PRETRAINED_MODEL_PATH = './lid.176.bin'
+# download the model file (it was taught from wikipedia with 176 languages):
+# wget -O ~/PycharmProjects/korinna/large_files/lid.176.bin2 https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
+PRETRAINED_MODEL_PATH = '../../large_files/lid.176.bin'
 model = fasttext.load_model(PRETRAINED_MODEL_PATH)
 # scope
-k =3
+k =1
 threshold = 0.1
 
 # dictionary
@@ -36,6 +38,10 @@ def print_predictions(title, predictions):
         print(str(i + 1)+".", get_language_name(languages[i]), ' language probability:',scores[i])
     print()
 
+def get_text_from_web(link):
+    webpage = str(urllib.request.urlopen(link).read())
+    soup = bs4.BeautifulSoup(webpage, "html.parser")
+    return soup.get_text()
 
 predictions = model.predict("je mange de la nourriture", k, threshold)
 print_predictions("pure France",predictions)
@@ -44,16 +50,11 @@ predictions = model.predict("Which baking dish is best to bake a banana bread ?"
 print_predictions("pure English",predictions)
 
 link = "https://stackoverflow.com/questions/30951657/download-only-the-text-from-a-webpage-content-in-python"
-webpage=str(urllib.request.urlopen(link).read())
-soup = bs4.BeautifulSoup(webpage,"html.parser")
-#print(soup.get_text())
-predictions = model.predict(soup.get_text(), k, threshold)
+predictions = model.predict(get_text_from_web(link), k, threshold)
 print_predictions("stackoverflow", predictions)
 
 link = "https://444.hu/"
-webpage=str(urllib.request.urlopen(link).read())
-soup = bs4.BeautifulSoup(webpage,"html.parser")
-predictions = model.predict(soup.get_text(), k, threshold)
+predictions = model.predict(get_text_from_web(link), k, threshold)
 print_predictions("444.hu", predictions)
 
 predictions = model.predict("je mange de la nourriture. Which baking dish is best to bake a banana bread ?", k, threshold)
