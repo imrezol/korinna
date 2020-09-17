@@ -37,6 +37,25 @@
 * Third party dependencys: https://www.jetbrains.com/help/pycharm/managing-dependencies.html#apply_dependencies
  
 
+## Jupyter Notebook
+* https://jupyter.org/install.html
+* install
+```bash
+pip3 install jupyterlab
+pip3 install notebook
+```
+* use notebook
+```bash
+jupyter notebook myNotbook
+```
+
+## NLP courses
+* Stanford CS224N: NLP with Deep Learning | Winter 2019: 
+    * Videos: https://www.youtube.com/watch?v=8rXD5-xhemo&list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z&index=1
+    * Slides, codes: http://web.stanford.edu/class/cs224n/index.html#schedule
+* Natural Language Processing in Python: https://www.youtube.com/watch?v=xvqsFTUsOmc
+* Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1): https://www.youtube.com/watch?v=fNxaJsNG3-s
+
 ## Notes
 * https://www.freecodecamp.org/news/python-while-loop-tutorial-do-while-true-example-statement/
 * Algorithmic efficiency (Big O)
@@ -52,4 +71,5 @@
 * namespace
 * declarative vs procedural(functional)
 
+* LinAlg course: https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces?ref=resume_learning#linear-combinations
 
