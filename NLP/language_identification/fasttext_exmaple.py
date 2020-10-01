@@ -2,16 +2,19 @@
 # wget -O lid.176.bin https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
 
 # third party libraries, dependencies
+
 import fasttext
 import bs4
 import urllib.request
+import certifi
+import ssl
 
 # download the model file (it was taught from wikipedia with 176 languages):
 # wget -O ~/PycharmProjects/korinna/large_files/lid.176.bin2 https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
 PRETRAINED_MODEL_PATH = '../../large_files/lid.176.bin'
 model = fasttext.load_model(PRETRAINED_MODEL_PATH)
 # scope
-k =1
+k =3
 threshold = 0.1
 
 # dictionary
@@ -32,14 +35,15 @@ def print_predictions(title, predictions):
     print(title+" preditions:")
     # array
     languages = predictions[0]  #scope
-    scores = predictions[1]
+    probabilities = predictions[1]
     for i in range(len(languages)):
         # variable types, conversion
-        print(str(i + 1)+".", get_language_name(languages[i]), ' language probability:',scores[i])
+        print(str(i + 1)+".", get_language_name(languages[i]), ' language probability:',probabilities[i])
     print()
 
 def get_text_from_web(link):
-    webpage = str(urllib.request.urlopen(link).read())
+    context = ssl.create_default_context(cafile=certifi.where())
+    webpage = str(urllib.request.urlopen(link, context=context).read())
     soup = bs4.BeautifulSoup(webpage, "html.parser")
     return soup.get_text()
 
