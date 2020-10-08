@@ -5,7 +5,7 @@
 
 import fasttext
 import bs4
-import urllib.request
+import requests
 import certifi
 import ssl
 
@@ -42,10 +42,11 @@ def print_predictions(title, predictions):
     print()
 
 def get_text_from_web(link):
-    context = ssl.create_default_context(cafile=certifi.where())
-    webpage = str(urllib.request.urlopen(link, context=context).read())
-    soup = bs4.BeautifulSoup(webpage, "html.parser")
-    return soup.get_text()
+    # r = requests.get(link, verify=certifi.where())
+    r = requests.get(link)
+    encoding = r.encoding if 'charset' in r.headers.get('content-type', '').lower() else None
+    soup = bs4.BeautifulSoup(r.content, from_encoding=encoding, features="lxml")
+    return soup.get_text().replace("\n","")
 
 predictions = model.predict("je mange de la nourriture", k, threshold)
 print_predictions("pure France",predictions)
@@ -57,7 +58,7 @@ link = "https://stackoverflow.com/questions/30951657/download-only-the-text-from
 predictions = model.predict(get_text_from_web(link), k, threshold)
 print_predictions("stackoverflow", predictions)
 
-link = "https://444.hu/"
+link = "https://444.hu/2020/10/08/kina-nyeresre-all-a-koronavirus-ellen/"
 predictions = model.predict(get_text_from_web(link), k, threshold)
 print_predictions("444.hu", predictions)
 
