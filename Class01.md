@@ -5,7 +5,7 @@
 * stop words
 * dog toy vs toy dog
 * TF-IDF
-### probality, score, rank
+### probability, score, rank
 * percentage between 0-100 
 * in computer word it's a float between 0 and 1
 * 0.15 means 15%
