@@ -6,8 +6,6 @@
 import fasttext
 import bs4
 import requests
-import certifi
-import ssl
 
 # download the model file (it was taught from wikipedia with 176 languages):
 # wget -O ~/PycharmProjects/korinna/large_files/lid.176.bin2 https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
@@ -46,7 +44,6 @@ def print_predictions(title, predictions):
 
 
 def get_text_from_web(link):
-    # r = requests.get(link, verify=certifi.where())
     r = requests.get(link)
     encoding = r.encoding if 'charset' in r.headers.get('content-type', '').lower() else None
     soup = bs4.BeautifulSoup(r.content, from_encoding=encoding, features="lxml")
