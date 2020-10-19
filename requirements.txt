@@ -8,4 +8,6 @@ matplotlib~=3.3.2
 sklearn~=0.0
 scikit-learn~=0.23.2
 gensim~=3.8.3
-lxml~=4.5.2
+lxml~=4.6.0
+pydub~=0.24.1
+SpeechRecognition~=3.8.1
