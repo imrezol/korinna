@@ -39,7 +39,7 @@
     * Shortcuts: https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard_mac.pdf?_ga=2.34691939.311588978.1600711321-2138058226.1598602526
     * Learn shortcuts as you work:https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html#learn-shortcuts
     * PyCharm Cheat Sheet: https://www.shortcutfoo.com/app/dojos/pycharm-win/cheatsheet
-    
+* Code with me: https://blog.jetbrains.com/blog/2020/09/28/code-with-me-eap/
  
 
 ## Jupyter Notebook
